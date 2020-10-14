@@ -1,0 +1,863 @@
+---
+title: JavaScript
+---
+
+## 代码风格
+
+编写 `JavaScript` 时需要遵守的规则，尽量使用 `ES6` 语法。
+
+### 换行
+
+- [强制] 每个独立语句结束后必须换行。
+- [强制] 每行不得超过 120 个字符。
+
+更多[配置](/frontend/VSCode.html#配置换行)
+
+### 变量声明
+
+- [强制] 不要在同时初始化多个变量时进行换行
+
+声明多个变量，容易导致较长的行长度，修改时容易造成逗号和分号的混淆，特别是编辑器批量选择时。
+
+```js
+// bad
+let a = 1,
+  b = 2,
+  c = 3;
+
+// good
+let a = 1;
+let b = 2;
+let c = 3;
+```
+
+### 命名
+
+- [强制] 变量、函数、函数参数 使用 `Camel`(驼峰) 命名法。
+
+示例：
+
+```js
+let sourceString = "";
+
+function stringFormat(sourceString) {}
+```
+
+- [强制] 常量使用全部字母大写，单词间下划线分隔的命名方式。
+
+```js
+const HTML_ENTITY = {};
+```
+
+- [强制] 类使用`Pascal`命名法，即首字母必须为大写。
+
+```js
+function Animal() {}
+
+class Animal {
+  constructor() {}
+}
+```
+
+- [强制] 类名使用`名词`。
+
+```js
+function Engine(options) {}
+```
+
+- [建议] 函数名使用`动宾短语`。
+
+```js
+function getElement() {}
+
+function fetchData() {}
+```
+
+- [建议] boolean 类型的变量使用 `is` 或 `has` 开头。
+
+```js
+let isReady = false;
+let hasMoreCommands = false;
+```
+
+- [建议] Promise 对象 用 `动宾短语的进行时` 表达。
+
+```js
+let loadingData = ajax.get("url");
+loadingData.then(() => {});
+```
+
+- [建议] 不要使用链式赋值
+
+```js
+// bad
+let a = (b = c = 1);
+
+// good
+let a = 1;
+let b = 1;
+let c = 1;
+```
+
+## 语言特性
+
+### 变量
+
+- [强制] 对所有变量都使用 `const` 或者 `let`
+
+```js
+// bad
+var a = 1;
+var b = 2;
+
+// good
+const a = 1;
+let b = 2;
+```
+
+- [强制] 变量、函数在使用前必须先定义。
+
+未定义变量将导致变量污染全局环境。
+
+```js
+//bad
+name = "Welltec";
+
+// good
+let name = "Welltec";
+```
+
+### 条件
+
+- [强制] 使用类型严格的` ===`。仅当判断 `null` 或 `undefined` 时，允许使用 `== null`。
+
+使用 `===` 可以避免等于判断中隐式的类型转换。
+
+```js
+// bad
+if (age == 30) {
+  // ......
+}
+
+// good
+if (age === 30) {
+  // ......
+}
+```
+
+- [建议] 尽可能使用简洁的表达式。
+
+```js
+// bad
+if (name === "") {
+  // ......
+}
+
+// good
+if (!name) {
+  // ......
+}
+
+// 字符串非空
+
+// bad
+if (name !== "") {
+  // ......
+}
+
+// good
+if (name) {
+  // ......
+}
+
+// 数组非空
+// bad
+if (collection.length > 0) {
+  // ......
+}
+
+// good
+if (collection.length) {
+  // ......
+}
+
+// 布尔不成立
+// bad
+if (notTrue === false) {
+  // ......
+}
+
+// good
+if (!notTrue) {
+  // ......
+}
+
+// null 或 undefined
+// bad
+if (noValue === null || typeof noValue === "undefined") {
+  // ......
+}
+
+// good
+if (noValue == null) {
+  // ......
+}
+```
+
+- [建议] 对于相同变量或表达式的多值条件，用 `switch` 代替 `if`。
+
+```js
+// good
+const id = "1";
+switch (id) {
+  case "1":
+    // ......
+    break;
+  case "2":
+  case "3":
+    // ......
+    break;
+}
+
+// bad
+const id = "1";
+if (id === "1") {
+  // ......
+} else if (id === "2" || id === "3") {
+  // ......
+}
+```
+
+- [建议] 如果函数或全局中的 `else` 块后没有任何语句，可以删除 `else`。
+
+```js
+// bad
+function getName() {
+  if (name) {
+    return name;
+  } else {
+    return "unnamed";
+  }
+}
+
+// good
+function getName() {
+  if (name) {
+    return name;
+  }
+
+  return "unnamed";
+}
+```
+
+### 循环
+
+- [建议] 对循环内多次使用的不变值，在循环外用变量缓存。
+
+```js
+// bad
+for (let i = 0, len = elements.length; i < len; i++) {
+  let element = elements[i];
+  element.style.width = wrap.offsetWidth + "px";
+  // ......
+}
+
+// good
+let width = wrap.offsetWidth + "px";
+for (let i = 0, len = elements.length; i < len; i++) {
+  let element = elements[i];
+  element.style.width = width;
+  // ......
+}
+```
+
+- [建议] 对有序集合进行遍历时，缓存 `length`。
+
+```js
+for (let i = 0, len = elements.length; i < len; i++) {
+  let element = elements[i];
+  // ......
+}
+```
+
+### 类型
+
+- [建议] 类型检测优先使用 `typeof`。对象类型检测使用 `instanceof`。`null` 或 `undefined` 的检测使用 `== null`。
+
+```js
+// Object
+typeof variable === "object";
+
+// Array
+variable instanceof Array;
+
+// null
+variable === null;
+
+// null or undefined
+variable == null;
+
+// undefined
+typeof variable === "undefined";
+```
+
+#### 类型转换
+
+- [建议] 转换成 `string` 时，使用 `+ ''`。
+
+```js
+const num = 2;
+num + ""; // '2'
+```
+
+- [建议] 转换成 `number` 时，通常使用 `+`。
+
+```js
++"2"; // 2
+```
+
+- [建议] `string` 转换成 `number`，要转换的字符串结尾包含非数字并期望忽略时，使用 `parseInt`。
+
+```js
+let width = "200px";
+parseInt(width, 10);
+```
+
+- [建议] 转换成 `boolean` 时，使用 `!!`。
+
+```js
+let num = 3.14;
+!!num;
+```
+
+- [建议] `number` 去除小数点，使用 `Math.floor / Math.round / Math.ceil`，不使用 `parseInt`。
+
+```js
+let num = 3.14;
+Math.ceil(num);
+```
+
+### 对象
+
+- [建议] 使用字面量值创建对象
+
+```js
+const a = {};
+```
+
+- [强制] 请使用对象属性、方法的简写方式
+
+```js
+// bad
+const name = "Welltec";
+
+const item = {
+  name: name,
+  addValue: function(val) {
+    // ......
+  },
+};
+
+// good
+const name = "Welltec";
+
+const item = {
+  name,
+  addValue(val) {
+    // ......
+  },
+};
+```
+
+- [建议] 使用 `Object.keys` 或 `Object.entries` 进行对象遍历。
+
+不建议使用 `for .. in` 进行对象的遍历，以避免遗漏 `hasOwnProperty` 产生的错误。
+
+```js
+// good
+for (let key of Object.keys(foo)) {
+  let value = foo[key];
+}
+
+// good
+for (let [key, value] of Object.entries(foo)) {
+  // ...
+}
+```
+
+- [强制] 不允许修改和扩展任何原生对象和宿主对象的原型。
+
+```js
+String.prototype.trim = function() {};
+```
+
+- [建议] 属性访问时，尽量使用 `.`
+  > 通常在 `JavaScript` 中声明的对象，属性命名是使用 `Camel` 命名法，用 `.` 来访问更清晰简洁。部分特殊的属性（比如来自后端的 `JSON` ），可能采用不寻常的命名方式，可以通过 `[expr]` 方式访问。 —— 尼古拉斯·赵四
+
+说人话：前端定义的对象属性用`.`，后端返回的不能识别的数据用`[expr]`
+
+```js
+// 这是前端定义好的对象属性
+let dog = {
+  age: 2,
+};
+
+dog.age; // 2
+
+// 假如这是后端返回的数据
+fetch().then(res => {
+  let data = res.data;
+  console.log(data["list"]); // {}
+});
+```
+
+### 数组
+
+- [建议] 使用字面量值创建数组
+
+```js
+const items = [];
+```
+
+- [强制] 向数组中添加元素时，使用 `push` 方法
+
+```js
+const items = [];
+
+// bad
+items[items.length] = "test";
+
+// good
+items.push("test");
+```
+
+- [建议] 使用扩展运算符`（...）`拷贝数组
+
+```js
+const arr = [1, 2, 3, 4];
+
+// good
+let arrCopy = [...arr];
+```
+
+- [强制] 使用数组的 `map、reduce、filter` 等方法时，请使用 return 声明，如果是单一声明语句的情况，可省略 `return`。
+
+```js
+[1, 2, 3].map(x => {
+  const y = x + 1;
+  return x * y;
+});
+
+[1, 2, 3].map(x => x + 1);
+```
+
+### 解构赋值
+
+- [建议] 当需要使用对象的多个属性时，请使用解构赋值
+
+```js
+// bad
+function getFullName(user) {
+  const firstName = user.firstName;
+  const lastName = user.lastName;
+
+  return `${firstName} ${lastName}`;
+}
+
+// good
+function getFullName(user) {
+  const { firstName, lastName } = user;
+
+  return `${firstName} ${lastName}`;
+}
+
+// better
+function getFullName({ firstName, lastName }) {
+  return `${firstName} ${lastName}`;
+}
+```
+
+- [建议] 当需要使用数组的多个值时，请同样使用解构赋值
+
+```js
+const arr = [1, 2, 3, 4];
+
+// bad
+const first = arr[0];
+const second = arr[1];
+
+// good
+const [first, second] = arr;
+```
+
+- [建议] 函数需要回传多个值时，请使用对象的解构，而不是数组的解构
+
+```js
+// bad
+function doSomething() {
+  return [top, right, bottom, left];
+}
+
+// 如果是数组解构，那么在调用时就需要考虑数据的顺序
+const [top, xx, xxx, left] = doSomething();
+
+// good
+function doSomething() {
+  return { top, right, bottom, left };
+}
+
+// 此时不需要考虑数据的顺序
+const { top, left } = doSomething();
+```
+
+### 字符串
+
+- [强制] 字符串统一使用单引号的形式 ''
+
+- [强制] 字符串太长的时候，请不要使用字符串连接符换行 `\`，而是使用 `+`，或者模板字符串
+
+```js
+const str =
+  "东华机械 东华机械 东华机械" +
+  "东华机械 东华机械 东华机械" +
+  "东华机械 东华机械";
+```
+
+- 程序化生成字符串时，请使用模板字符串
+
+```js
+const test = "Welltec";
+
+// bad
+const str = "a" + "b" + test;
+
+// good
+const str = `Hello, ${test}`;
+```
+
+### 函数
+
+- [建议] 请使用函数声明，而不是函数表达式
+
+```js
+function foo() {
+  // do something
+}
+```
+
+- [建议] 不要在非函数代码块中声明函数
+
+```js
+// bad
+if (isUse) {
+  function test() {
+    // do something
+  }
+}
+
+// good
+let test;
+if (isUse) {
+  test = () => {
+    // do something
+  };
+}
+```
+
+- [建议] 不要使用 `arguments`，可以选择使用 ...
+
+> `arguments` 只是一个类数组，而 `...` 是一个真正的数组。 ——尼古拉斯·赵四
+
+```js
+// bad
+function test() {
+  const args = Array.prototype.slice.call(arguments);
+  return args.join("");
+}
+
+// good
+function test(...args) {
+  return args.join("");
+}
+```
+
+- [建议] 函数参数的默认值
+
+```js
+// bad
+function test(opts) {
+  opts = opts || {};
+}
+
+// good
+function test(opts = {}) {
+  // ...
+}
+```
+
+- [强制] 一个函数被设计为需要 call 和 apply 的时候，不能是箭头函数。
+
+  解释：
+  箭头函数会强制绑定当前环境下的 this。
+
+- [建议] 空函数不使用 `new Function()` 的形式。
+
+> 对于性能有高要求的场合，建议存在一个空函数的常量，供多处使用共享。
+
+```js
+let emptyFunction = function() {};
+```
+
+### 原型
+
+- 使用 `class`，避免直接操作 `prototype`
+
+```js
+// bad
+function Queue(contents = []) {
+  // ......
+}
+Queue.prototype.pop = function() {
+  // ......
+};
+
+// good
+class Queue {
+  constructor(contents = []) {
+    // ......
+  }
+
+  pop() {
+    // ......
+  }
+}
+```
+
+### 模块
+
+- 使用标准的 ES6 模块语法 `import` 和 `export`
+
+```js
+// bad
+const util = require("./util");
+module.exports = util;
+
+// good
+import Util from "./util";
+export default Util;
+
+// better
+import { Util } from "./util";
+export default Util;
+```
+
+- 尽量不要使用 import 的通配符 \*，这样可以确保你只有一个默认的 export
+
+```js
+// bad
+import * as Util from "./util";
+
+// good
+import Util from "./util";
+```
+
+### 迭代器
+
+- 尽量不要使用 `iterators`
+
+```js
+const numbers = [1, 2, 3, 4, 5];
+
+// bad
+let sum = 0;
+for (let num of numbers) {
+  sum += num;
+}
+
+// good
+let sum = 0;
+numbers.forEach(num => (sum += num));
+
+// better
+const sum = numbers.reduce((total, num) => total + num, 0);
+```
+
+### 分号
+
+理论上推荐 `Standard` 的规范，不使用分号，但是并没有统一要求，在部分 `Vue` 项目 `Eslint` 配置中会默认配置为 `Standard` 规范的严格模式。
+
+## ESNext 建议
+
+[扩展阅读](https://es6.ruanyifeng.com/#docs/style)
+
+- [强制] 箭头函数的参数只有一个，并且不包含解构时，参数部分的括号省略，且作为返回值时，省略 `{}` 和 `return`。
+
+```js
+// good
+list.map(item => item * 2);
+
+// good
+let fetchName = async id => {
+  let user = await request(`users/${id}`);
+  return user.fullName;
+};
+```
+
+- [建议] 箭头函数的函数体只有一个 `Object Literal`，且作为返回值时，使用 `()` 包裹。
+
+```js
+// good
+list.map(item => ({ name: item[0], email: item[1] }));
+```
+
+- 用数组展开代替 `concat` 方法，数组展开对 `Iterable` 有更好的兼容性。
+
+```js
+let foo = [...foo, newValue];
+let bar = [...bar, ...newValues];
+```
+
+- [强制] 所有 `import` 语句写在模块开始处。
+
+```js
+import { bar } from "./bar";
+```
+
+- [建议] 尽可能使用 `for .. of` 进行遍历。
+
+- [建议] 当需要遍历功能时，使用 `Map` 和 `Set`。
+
+- [建议] 程序运行过程中有添加或移除元素的操作时，使用 `Map` 和 `Set`。
+
+- [建议] 使用 `Promise` 代替 `callback`。
+
+- [建议] 使用 `async/await` 代替异步处理。
+
+## 注释
+
+注释写法参照 `JSDoc`
+
+### 单行注释
+
+- [强制] 必须独占一行。`//` 后跟一个空格，缩进与下一行被注释说明的代码一致。
+
+```js
+// 公司名字
+const name = "Welltec";
+
+const name = "Welltec"; // 公司名字
+```
+
+### 多行注释
+
+- [建议] 避免使用 `/*...*/` 这样的多行注释。有多行注释内容时，使用多个单行注释，也称 **细节注释**。
+
+```js
+function fetchDescriptor() {
+  // 先获取登录的 Token
+  // 然后判断路由权限
+  // 通过 Token 拉取用户信息
+  // 巴拉巴拉小魔仙
+}
+```
+
+### 函数注释
+
+- [强制] 重要的函数/方法注释必须包含函数说明，有参数和返回值时必须使用注释标识。
+
+简单的方法或 `return` 关键字仅作退出函数/方法使用时，无须对返回值作注释标识。
+
+```js
+/**
+ * 设置用户信息
+ *
+ * @param {string} 姓名
+ * @param {number} 年龄
+ * @param {string} 城市
+ * @return {Object} 个人信息
+ */
+
+function setUser(name, age, city) {
+  return { name, age, city };
+}
+```
+
+- 常用类型：`{string}, {number}, {boolean}, {Object}, {Function}, {RegExp}, {Array}, {Date}`。
+
+[强制] 对于基本类型 `{string}, {number}, {boolean}`，首字母必须小写。
+
+| 类型定义          | 语法示例                             | 解释                                            |
+| ----------------- | ------------------------------------ | ----------------------------------------------- |
+| String            | `{string}`                           | --                                              |
+| Number            | `{number}`                           | --                                              |
+| Boolean           | `{boolean}`                          | --                                              |
+| Object            | `{Object}`                           | --                                              |
+| Function          | `{Function}`                         | --                                              |
+| RegExp            | `{RegExp}`                           | --                                              |
+| Array             | `{Array}`                            | --                                              |
+| Date              | `{Date}`                             | --                                              |
+| 单一类型集合      | `{Array.<string>}`                   | string 类型的数组                               |
+| 多类型            | `{(number ｜ boolean)}`              | 可能是 number 类型, 也可能是 boolean 类型       |
+| 允许为 null       | `{?number}`                          | 可能是 number, 也可能是 null                    |
+| 不允许为 null     | `{!Object}`                          | Object 类型, 但不是 null                        |
+| Function 类型     | `{function(number, boolean)}`        | 函数, 形参类型                                  |
+| Function 带返回值 | `{function(number, boolean):string}` | 函数, 形参, 返回值类型                          |
+| Promise           | `Promise.<resolveType, rejectType>`  | Promise，成功返回的数据类型，失败返回的错误类型 |
+| 参数可选          | `@param {string=} name`              | 可选参数, =为类型后缀                           |
+| 可变参数          | `@param {...number} args`            | 变长参数, ...为类型前缀                         |
+| 任意类型          | `{\*}`                               | 任意类型                                        |
+| 可选任意类型      | `@param {\*=} name`                  | 可选参数，类型不限                              |
+| 可变任意类型      | `@param {...\*} args`                | 变长参数，类型不限                              |
+
+### 扩展阅读
+
+> 了解即可
+
+- 文件注释
+
+```js
+/**
+ * @file 文件名
+ * @author 作者
+ */
+```
+
+- 事件注释
+
+```js
+/**
+ * 自定义事件，值变更时触发
+ *
+ * @event Select#change
+ */
+window.addEventListener(new Event("selectorChange"));
+```
+
+- 命名空间注释
+
+```js
+/**
+ * @namespace
+ */
+let util = {};
+```
+
+- 类注释
+
+```js
+/**
+ * 动物
+ *
+ * @class
+ */
+class Animal {}
+
+/**
+ * 狗狗
+ *
+ * @class
+ * @extends Animal
+ */
+
+class Dog extends Animal {}
+```

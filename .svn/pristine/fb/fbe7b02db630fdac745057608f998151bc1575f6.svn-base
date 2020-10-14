@@ -1,0 +1,14 @@
+---
+home: true
+heroImage: /favicon.ico
+actionText: 立即开始 →
+actionLink: /frontend/
+features:
+  - title: 内容
+    details: 包含前后端各类型规范、建议内容
+  - title: 用途
+    details: 用于日常业务需求以及统一开发目的
+  - title: 版本
+    details: V1.0.0 （2020-10-12）
+footer: © 2020 东华机械有限公司
+---
