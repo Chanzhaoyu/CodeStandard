@@ -17,6 +17,10 @@ module.exports = {
     // 顶部栏菜单
     nav: [
       {
+        text: '更新日志',
+        link: '/Update',
+      },
+      {
         text: 'iSee 导航',
         link: 'http://192.168.110.10/',
       },
@@ -44,7 +48,6 @@ module.exports = {
         children: [
           'backend/BaseCode',
           'backend/Dto',
-          'backend/Database',
           'backend/Table',
           'backend/Common',
           'backend/API',
@@ -54,6 +57,7 @@ module.exports = {
           'backend/Redis',
           'backend/RabbitMq',
           'backend/Helper',
+          'backend/CodeCommit'
         ],
       },
     ],

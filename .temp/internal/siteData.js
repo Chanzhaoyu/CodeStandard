@@ -41,8 +41,33 @@ export const siteData = {
       "headers": [
         {
           "level": 2,
-          "title": "更新日志",
-          "slug": "更新日志"
+          "title": "最近更新",
+          "slug": "最近更新"
+        },
+        {
+          "level": 3,
+          "title": "1.2.1",
+          "slug": "_1-2-1"
+        }
+      ]
+    },
+    {
+      "title": "1.2.1",
+      "frontmatter": {},
+      "regularPath": "/Update.html",
+      "relativePath": "Update.md",
+      "key": "v-0ecfe13d",
+      "path": "/Update.html",
+      "headers": [
+        {
+          "level": 3,
+          "title": "1.2.1",
+          "slug": "_1-2-1"
+        },
+        {
+          "level": 3,
+          "title": "1.2.0",
+          "slug": "_1-2-0"
         },
         {
           "level": 3,
@@ -53,6 +78,33 @@ export const siteData = {
           "level": 3,
           "title": "1.0.0",
           "slug": "_1-0-0"
+        }
+      ]
+    },
+    {
+      "title": "Api 接口规范",
+      "frontmatter": {
+        "title": "Api 接口规范"
+      },
+      "regularPath": "/backend/API.html",
+      "relativePath": "backend/API.md",
+      "key": "v-5eb9ba14",
+      "path": "/backend/API.html",
+      "headers": [
+        {
+          "level": 2,
+          "title": "接口命名规范",
+          "slug": "接口命名规范"
+        },
+        {
+          "level": 2,
+          "title": "EF 使用规范",
+          "slug": "ef-使用规范"
+        },
+        {
+          "level": 2,
+          "title": "其他规范",
+          "slug": "其他规范"
         }
       ]
     },
@@ -109,14 +161,21 @@ export const siteData = {
       ]
     },
     {
-      "title": "Api 接口规范",
+      "title": "代码提交发布规范",
       "frontmatter": {
-        "title": "Api 接口规范"
+        "title": "代码提交发布规范"
       },
-      "regularPath": "/backend/API.html",
-      "relativePath": "backend/API.md",
-      "key": "v-5eb9ba14",
-      "path": "/backend/API.html"
+      "regularPath": "/backend/CodeCommit.html",
+      "relativePath": "backend/CodeCommit.md",
+      "key": "v-988350f8",
+      "path": "/backend/CodeCommit.html",
+      "headers": [
+        {
+          "level": 2,
+          "title": "代码提交",
+          "slug": "代码提交"
+        }
+      ]
     },
     {
       "title": "iSee 公共字段",
@@ -129,14 +188,36 @@ export const siteData = {
       "path": "/backend/Common.html"
     },
     {
-      "title": "数据库命名规范",
+      "title": "实体和 Dto",
       "frontmatter": {
-        "title": "数据库命名规范"
+        "title": "实体和 Dto"
       },
-      "regularPath": "/backend/Database.html",
-      "relativePath": "backend/Database.md",
-      "key": "v-4d2eeb96",
-      "path": "/backend/Database.html"
+      "regularPath": "/backend/Dto.html",
+      "relativePath": "backend/Dto.md",
+      "key": "v-6196a196",
+      "path": "/backend/Dto.html",
+      "headers": [
+        {
+          "level": 2,
+          "title": "实体命名规范",
+          "slug": "实体命名规范"
+        },
+        {
+          "level": 2,
+          "title": "实体添加特性",
+          "slug": "实体添加特性"
+        },
+        {
+          "level": 2,
+          "title": "实体继承接口",
+          "slug": "实体继承接口"
+        },
+        {
+          "level": 2,
+          "title": "Dto 命名规范",
+          "slug": "dto-命名规范"
+        }
+      ]
     },
     {
       "title": "枚举命名规范",
@@ -146,17 +227,19 @@ export const siteData = {
       "regularPath": "/backend/Enumerate.html",
       "relativePath": "backend/Enumerate.md",
       "key": "v-51715d14",
-      "path": "/backend/Enumerate.html"
-    },
-    {
-      "title": "实体和Dto",
-      "frontmatter": {
-        "title": "实体和Dto"
-      },
-      "regularPath": "/backend/Dto.html",
-      "relativePath": "backend/Dto.md",
-      "key": "v-6196a196",
-      "path": "/backend/Dto.html"
+      "path": "/backend/Enumerate.html",
+      "headers": [
+        {
+          "level": 2,
+          "title": "枚举建立原则",
+          "slug": "枚举建立原则"
+        },
+        {
+          "level": 2,
+          "title": "枚举命名规范",
+          "slug": "枚举命名规范-2"
+        }
+      ]
     },
     {
       "title": "工具类 Helper 规范",
@@ -176,17 +259,34 @@ export const siteData = {
       "regularPath": "/backend/Module.html",
       "relativePath": "backend/Module.md",
       "key": "v-1bd5e598",
-      "path": "/backend/Module.html"
-    },
-    {
-      "title": "RabbitMq 键命名规范",
-      "frontmatter": {
-        "title": "RabbitMq 键命名规范"
-      },
-      "regularPath": "/backend/RabbitMq.html",
-      "relativePath": "backend/RabbitMq.md",
-      "key": "v-5d3419e0",
-      "path": "/backend/RabbitMq.html"
+      "path": "/backend/Module.html",
+      "headers": [
+        {
+          "level": 2,
+          "title": "模块命名规范",
+          "slug": "模块命名规范"
+        },
+        {
+          "level": 2,
+          "title": "模块文件夹结构",
+          "slug": "模块文件夹结构"
+        },
+        {
+          "level": 2,
+          "title": "模块依赖关系",
+          "slug": "模块依赖关系"
+        },
+        {
+          "level": 2,
+          "title": "模块添加步骤",
+          "slug": "模块添加步骤"
+        },
+        {
+          "level": 2,
+          "title": "添加实体与 Dto 映射",
+          "slug": "添加实体与-dto-映射"
+        }
+      ]
     },
     {
       "title": "Nuget 包管理规范",
@@ -197,16 +297,6 @@ export const siteData = {
       "relativePath": "backend/Nuget.md",
       "key": "v-09759ad4",
       "path": "/backend/Nuget.html"
-    },
-    {
-      "title": "Redis 键命名规范",
-      "frontmatter": {
-        "title": "Redis 键命名规范"
-      },
-      "regularPath": "/backend/Redis.html",
-      "relativePath": "backend/Redis.md",
-      "key": "v-03576116",
-      "path": "/backend/Redis.html"
     },
     {
       "title": "介绍",
@@ -220,6 +310,38 @@ export const siteData = {
       "path": "/backend/"
     },
     {
+      "title": "RabbitMq 使用规范",
+      "frontmatter": {
+        "title": "RabbitMq 使用规范"
+      },
+      "regularPath": "/backend/RabbitMq.html",
+      "relativePath": "backend/RabbitMq.md",
+      "key": "v-5d3419e0",
+      "path": "/backend/RabbitMq.html"
+    },
+    {
+      "title": "Redis 使用规范",
+      "frontmatter": {
+        "title": "Redis 使用规范"
+      },
+      "regularPath": "/backend/Redis.html",
+      "relativePath": "backend/Redis.md",
+      "key": "v-03576116",
+      "path": "/backend/Redis.html",
+      "headers": [
+        {
+          "level": 2,
+          "title": "Redis 使用原则",
+          "slug": "redis-使用原则"
+        },
+        {
+          "level": 2,
+          "title": "RedisKey 命名规范",
+          "slug": "rediskey-命名规范"
+        }
+      ]
+    },
+    {
       "title": "表索引及分区表",
       "frontmatter": {
         "title": "表索引及分区表"
@@ -227,7 +349,34 @@ export const siteData = {
       "regularPath": "/backend/Table.html",
       "relativePath": "backend/Table.md",
       "key": "v-cbe0e694",
-      "path": "/backend/Table.html"
+      "path": "/backend/Table.html",
+      "headers": [
+        {
+          "level": 2,
+          "title": "索引规范",
+          "slug": "索引规范"
+        },
+        {
+          "level": 3,
+          "title": "索引名称",
+          "slug": "索引名称"
+        },
+        {
+          "level": 3,
+          "title": "需要建立索引的情况",
+          "slug": "需要建立索引的情况"
+        },
+        {
+          "level": 3,
+          "title": "索引使用查询规范",
+          "slug": "索引使用查询规范"
+        },
+        {
+          "level": 2,
+          "title": "分区表规范",
+          "slug": "分区表规范"
+        }
+      ]
     },
     {
       "title": "CSS",
@@ -330,6 +479,33 @@ export const siteData = {
           "level": 3,
           "title": "注释",
           "slug": "注释"
+        }
+      ]
+    },
+    {
+      "title": "图片规范",
+      "frontmatter": {
+        "title": "图片规范"
+      },
+      "regularPath": "/frontend/Images.html",
+      "relativePath": "frontend/Images.md",
+      "key": "v-bcecc720",
+      "path": "/frontend/Images.html",
+      "headers": [
+        {
+          "level": 3,
+          "title": "内容图",
+          "slug": "内容图"
+        },
+        {
+          "level": 3,
+          "title": "背景图",
+          "slug": "背景图"
+        },
+        {
+          "level": 3,
+          "title": "SVG",
+          "slug": "svg"
         }
       ]
     },
@@ -442,33 +618,6 @@ export const siteData = {
           "level": 2,
           "title": "Views",
           "slug": "views"
-        }
-      ]
-    },
-    {
-      "title": "图片规范",
-      "frontmatter": {
-        "title": "图片规范"
-      },
-      "regularPath": "/frontend/Images.html",
-      "relativePath": "frontend/Images.md",
-      "key": "v-bcecc720",
-      "path": "/frontend/Images.html",
-      "headers": [
-        {
-          "level": 3,
-          "title": "内容图",
-          "slug": "内容图"
-        },
-        {
-          "level": 3,
-          "title": "背景图",
-          "slug": "背景图"
-        },
-        {
-          "level": 3,
-          "title": "SVG",
-          "slug": "svg"
         }
       ]
     },
@@ -609,6 +758,10 @@ export const siteData = {
     "logo": "/logo.png",
     "nav": [
       {
+        "text": "更新日志",
+        "link": "/Update"
+      },
+      {
         "text": "iSee 导航",
         "link": "http://192.168.110.10/"
       }
@@ -635,7 +788,6 @@ export const siteData = {
         "children": [
           "backend/BaseCode",
           "backend/Dto",
-          "backend/Database",
           "backend/Table",
           "backend/Common",
           "backend/API",
@@ -644,7 +796,8 @@ export const siteData = {
           "backend/Enumerate",
           "backend/Redis",
           "backend/RabbitMq",
-          "backend/Helper"
+          "backend/Helper",
+          "backend/CodeCommit"
         ]
       }
     ]

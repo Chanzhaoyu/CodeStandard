@@ -21,11 +21,11 @@ export const routes = [
     redirect: "/"
   },
   {
-    name: "v-0e0fa910",
-    path: "/backend/BaseCode.html",
+    name: "v-0ecfe13d",
+    path: "/Update.html",
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-0e0fa910").then(next)
+      ensureAsyncComponentsLoaded("Layout", "v-0ecfe13d").then(next)
     },
   },
   {
@@ -37,6 +37,22 @@ export const routes = [
     },
   },
   {
+    name: "v-0e0fa910",
+    path: "/backend/BaseCode.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-0e0fa910").then(next)
+    },
+  },
+  {
+    name: "v-988350f8",
+    path: "/backend/CodeCommit.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-988350f8").then(next)
+    },
+  },
+  {
     name: "v-f1bc4294",
     path: "/backend/Common.html",
     component: GlobalLayout,
@@ -45,11 +61,11 @@ export const routes = [
     },
   },
   {
-    name: "v-4d2eeb96",
-    path: "/backend/Database.html",
+    name: "v-6196a196",
+    path: "/backend/Dto.html",
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-4d2eeb96").then(next)
+      ensureAsyncComponentsLoaded("Layout", "v-6196a196").then(next)
     },
   },
   {
@@ -58,14 +74,6 @@ export const routes = [
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
       ensureAsyncComponentsLoaded("Layout", "v-51715d14").then(next)
-    },
-  },
-  {
-    name: "v-6196a196",
-    path: "/backend/Dto.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-6196a196").then(next)
     },
   },
   {
@@ -85,27 +93,11 @@ export const routes = [
     },
   },
   {
-    name: "v-5d3419e0",
-    path: "/backend/RabbitMq.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-5d3419e0").then(next)
-    },
-  },
-  {
     name: "v-09759ad4",
     path: "/backend/Nuget.html",
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
       ensureAsyncComponentsLoaded("Layout", "v-09759ad4").then(next)
-    },
-  },
-  {
-    name: "v-03576116",
-    path: "/backend/Redis.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-03576116").then(next)
     },
   },
   {
@@ -119,6 +111,22 @@ export const routes = [
   {
     path: "/backend/index.html",
     redirect: "/backend/"
+  },
+  {
+    name: "v-5d3419e0",
+    path: "/backend/RabbitMq.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-5d3419e0").then(next)
+    },
+  },
+  {
+    name: "v-03576116",
+    path: "/backend/Redis.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-03576116").then(next)
+    },
   },
   {
     name: "v-cbe0e694",
@@ -142,6 +150,14 @@ export const routes = [
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
       ensureAsyncComponentsLoaded("Layout", "v-92d42b60").then(next)
+    },
+  },
+  {
+    name: "v-bcecc720",
+    path: "/frontend/Images.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-bcecc720").then(next)
     },
   },
   {
@@ -178,14 +194,6 @@ export const routes = [
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
       ensureAsyncComponentsLoaded("Layout", "v-038216aa").then(next)
-    },
-  },
-  {
-    name: "v-bcecc720",
-    path: "/frontend/Images.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-bcecc720").then(next)
     },
   },
   {
