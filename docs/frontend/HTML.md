@@ -64,25 +64,7 @@ title: HTML
 
 #### 命名
 
-- [强制] `class` 必须单词全字母小写，单词间以 `-` 分隔，必须代表相应模块或部件的内容或功能，不得以样式信息进行命名。
-
-> 继承 + 外来
-
-```html
-<div class="header">
-  <div class="header-left">
-    <div class="header-left_menu">
-      内容
-    </div>
-  </div>
-
-  <div class="header-right">
-    <div class="header-left_side">
-      内容
-    </div>
-  </div>
-</div>
-```
+[详细介绍](/frontend/Name.html#classname-命名)
 
 - [强制] 元素 `id` 必须保证页面唯一。
 

@@ -9,16 +9,12 @@ import GlobalLayout from "E:\\CodeStandard\\node_modules\\@vuepress\\core\\lib\\
 injectComponentOption(GlobalLayout, 'mixins', rootMixins)
 export const routes = [
   {
-    name: "v-6507acb8",
-    path: "/",
+    name: "v-5eb9ba14",
+    path: "/backend/API.html",
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-6507acb8").then(next)
+      ensureAsyncComponentsLoaded("Layout", "v-5eb9ba14").then(next)
     },
-  },
-  {
-    path: "/index.html",
-    redirect: "/"
   },
   {
     name: "v-0ecfe13d",
@@ -29,12 +25,16 @@ export const routes = [
     },
   },
   {
-    name: "v-5eb9ba14",
-    path: "/backend/API.html",
+    name: "v-6507acb8",
+    path: "/",
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-5eb9ba14").then(next)
+      ensureAsyncComponentsLoaded("Layout", "v-6507acb8").then(next)
     },
+  },
+  {
+    path: "/index.html",
+    redirect: "/"
   },
   {
     name: "v-0e0fa910",
@@ -61,19 +61,19 @@ export const routes = [
     },
   },
   {
-    name: "v-6196a196",
-    path: "/backend/Dto.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-6196a196").then(next)
-    },
-  },
-  {
     name: "v-51715d14",
     path: "/backend/Enumerate.html",
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
       ensureAsyncComponentsLoaded("Layout", "v-51715d14").then(next)
+    },
+  },
+  {
+    name: "v-6196a196",
+    path: "/backend/Dto.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-6196a196").then(next)
     },
   },
   {
@@ -169,6 +169,14 @@ export const routes = [
     },
   },
   {
+    name: "v-201f25b0",
+    path: "/frontend/VSCode.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-201f25b0").then(next)
+    },
+  },
+  {
     name: "v-375190db",
     path: "/frontend/",
     component: GlobalLayout,
@@ -179,14 +187,6 @@ export const routes = [
   {
     path: "/frontend/index.html",
     redirect: "/frontend/"
-  },
-  {
-    name: "v-201f25b0",
-    path: "/frontend/VSCode.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-201f25b0").then(next)
-    },
   },
   {
     name: "v-038216aa",

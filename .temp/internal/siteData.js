@@ -16,6 +16,68 @@ export const siteData = {
   ],
   "pages": [
     {
+      "title": "Api 接口规范",
+      "frontmatter": {
+        "title": "Api 接口规范"
+      },
+      "regularPath": "/backend/API.html",
+      "relativePath": "backend/API.md",
+      "key": "v-5eb9ba14",
+      "path": "/backend/API.html",
+      "headers": [
+        {
+          "level": 2,
+          "title": "接口命名规范",
+          "slug": "接口命名规范"
+        },
+        {
+          "level": 2,
+          "title": "EF 使用规范",
+          "slug": "ef-使用规范"
+        },
+        {
+          "level": 2,
+          "title": "其他规范",
+          "slug": "其他规范"
+        }
+      ]
+    },
+    {
+      "title": "1.2.2",
+      "frontmatter": {},
+      "regularPath": "/Update.html",
+      "relativePath": "Update.md",
+      "key": "v-0ecfe13d",
+      "path": "/Update.html",
+      "headers": [
+        {
+          "level": 3,
+          "title": "1.2.2",
+          "slug": "_1-2-2"
+        },
+        {
+          "level": 3,
+          "title": "1.2.1",
+          "slug": "_1-2-1"
+        },
+        {
+          "level": 3,
+          "title": "1.2.0",
+          "slug": "_1-2-0"
+        },
+        {
+          "level": 3,
+          "title": "1.1.0",
+          "slug": "_1-1-0"
+        },
+        {
+          "level": 3,
+          "title": "1.0.0",
+          "slug": "_1-0-0"
+        }
+      ]
+    },
+    {
       "title": "Home",
       "frontmatter": {
         "home": true,
@@ -46,65 +108,8 @@ export const siteData = {
         },
         {
           "level": 3,
-          "title": "1.2.1",
-          "slug": "_1-2-1"
-        }
-      ]
-    },
-    {
-      "title": "1.2.1",
-      "frontmatter": {},
-      "regularPath": "/Update.html",
-      "relativePath": "Update.md",
-      "key": "v-0ecfe13d",
-      "path": "/Update.html",
-      "headers": [
-        {
-          "level": 3,
-          "title": "1.2.1",
-          "slug": "_1-2-1"
-        },
-        {
-          "level": 3,
-          "title": "1.2.0",
-          "slug": "_1-2-0"
-        },
-        {
-          "level": 3,
-          "title": "1.1.0",
-          "slug": "_1-1-0"
-        },
-        {
-          "level": 3,
-          "title": "1.0.0",
-          "slug": "_1-0-0"
-        }
-      ]
-    },
-    {
-      "title": "Api 接口规范",
-      "frontmatter": {
-        "title": "Api 接口规范"
-      },
-      "regularPath": "/backend/API.html",
-      "relativePath": "backend/API.md",
-      "key": "v-5eb9ba14",
-      "path": "/backend/API.html",
-      "headers": [
-        {
-          "level": 2,
-          "title": "接口命名规范",
-          "slug": "接口命名规范"
-        },
-        {
-          "level": 2,
-          "title": "EF 使用规范",
-          "slug": "ef-使用规范"
-        },
-        {
-          "level": 2,
-          "title": "其他规范",
-          "slug": "其他规范"
+          "title": "1.2.2",
+          "slug": "_1-2-2"
         }
       ]
     },
@@ -188,6 +193,28 @@ export const siteData = {
       "path": "/backend/Common.html"
     },
     {
+      "title": "枚举命名规范",
+      "frontmatter": {
+        "title": "枚举命名规范"
+      },
+      "regularPath": "/backend/Enumerate.html",
+      "relativePath": "backend/Enumerate.md",
+      "key": "v-51715d14",
+      "path": "/backend/Enumerate.html",
+      "headers": [
+        {
+          "level": 2,
+          "title": "枚举建立原则",
+          "slug": "枚举建立原则"
+        },
+        {
+          "level": 2,
+          "title": "枚举命名规范",
+          "slug": "枚举命名规范-2"
+        }
+      ]
+    },
+    {
       "title": "实体和 Dto",
       "frontmatter": {
         "title": "实体和 Dto"
@@ -216,28 +243,6 @@ export const siteData = {
           "level": 2,
           "title": "Dto 命名规范",
           "slug": "dto-命名规范"
-        }
-      ]
-    },
-    {
-      "title": "枚举命名规范",
-      "frontmatter": {
-        "title": "枚举命名规范"
-      },
-      "regularPath": "/backend/Enumerate.html",
-      "relativePath": "backend/Enumerate.md",
-      "key": "v-51715d14",
-      "path": "/backend/Enumerate.html",
-      "headers": [
-        {
-          "level": 2,
-          "title": "枚举建立原则",
-          "slug": "枚举建立原则"
-        },
-        {
-          "level": 2,
-          "title": "枚举命名规范",
-          "slug": "枚举命名规范-2"
         }
       ]
     },
@@ -521,31 +526,25 @@ export const siteData = {
       "headers": [
         {
           "level": 2,
-          "title": "HTML/CSS 文件命名",
-          "slug": "html-css-文件命名"
+          "title": "className 命名",
+          "slug": "classname-命名"
+        },
+        {
+          "level": 2,
+          "title": "ID 命名",
+          "slug": "id-命名"
+        },
+        {
+          "level": 2,
+          "title": "文件命名",
+          "slug": "文件命名"
         },
         {
           "level": 2,
           "title": "组件命名",
           "slug": "组件命名"
-        },
-        {
-          "level": 2,
-          "title": "ClassName",
-          "slug": "classname"
         }
       ]
-    },
-    {
-      "title": "介绍",
-      "frontmatter": {
-        "title": "介绍",
-        "sidebarDepth": 1
-      },
-      "regularPath": "/frontend/",
-      "relativePath": "frontend/README.md",
-      "key": "v-375190db",
-      "path": "/frontend/"
     },
     {
       "title": "VSCode",
@@ -585,6 +584,17 @@ export const siteData = {
       ]
     },
     {
+      "title": "介绍",
+      "frontmatter": {
+        "title": "介绍",
+        "sidebarDepth": 1
+      },
+      "regularPath": "/frontend/",
+      "relativePath": "frontend/README.md",
+      "key": "v-375190db",
+      "path": "/frontend/"
+    },
+    {
       "title": "Vue",
       "frontmatter": {
         "title": "Vue"
@@ -603,16 +613,6 @@ export const siteData = {
           "level": 2,
           "title": "深度选择器",
           "slug": "深度选择器"
-        },
-        {
-          "level": 2,
-          "title": "Component",
-          "slug": "component"
-        },
-        {
-          "level": 2,
-          "title": "JS 文件",
-          "slug": "js-文件"
         },
         {
           "level": 2,
